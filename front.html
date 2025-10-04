@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mercedes Benz</title>
+       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+       <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
 </head>
 <style>
 
@@ -18,85 +21,12 @@
         width:3%;
         
     }
-
-    body
+    html
     {
-        background:white;
+        overflow-x: hidden;
     }
-        
-header
-{
-                                                                       
-  width:89%;
- margin-left:10%;
- //text-align:center;
-  font-size:25px;
-  padding:8px;
-  background:black;
 
-
-
-                                                                               
-                                                                         
- }
-
-header ol
-{
-padding:0px;
-}
-
-header ol li
-{
-list-style:none;
-padding:10px;
-cursor:pointer;
-display:inline;
-margin:3%;
-color:white;
-font-family:verdana;
-
-
-
-
-}
-
-
-header ol li:hover
-{
-color:red;
-
-
-
-
-
-
-
-}
-
-header ol li a:link
-{
-color:white;
-text-decoration:none;
-font-size:20px;
-}
-
-header ol li a:visited
-{
-color:white;
-}
-
-header ol li a:hover
-{
-text-decoration:underline;
-color:red;
-
-}
-
-header ol li a:active
-{
-color: red;
-
-}
+   
 
 .logo
 {
@@ -105,7 +35,7 @@ position:absolute;
 
 padding:10px;
 top:0.9%;
-left:1%;
+left:50%;
 }
 
 .pic
@@ -117,9 +47,9 @@ left:1%;
 {
  position:absolute;
  left:87%;
- top:5%;
+ top:3%;
  border:1px solid white;
- width:7%;
+ width:10%;
  text-align:center;
  font-size:25px;
 background:transparent;
@@ -137,7 +67,6 @@ border-radius:8px;
     background:white;
     cursor:pointer;
 }
-
 .btn
 {
     color:white;
@@ -149,12 +78,12 @@ border-radius:8px;
 .photo
 {
     width:100%;
-    height:750px;
+    
 }
 
  h1
 {
-    color:rgb(247, 218, 3);
+    color:rgb(9, 8, 0);
     font-size:50px;
 }
 
@@ -167,13 +96,13 @@ p
 {
     position:absolute;
     left:3%;
-    top:20%;
+    top:25%;
 }
 
 .stn 
 {
     font-size:25px;
-    color:white;
+    color:rgb(9, 9, 9);
     
     
 }
@@ -192,7 +121,7 @@ p
 
     color:rgb(10, 7, 7);
     font-size:20px;
-    border:1px solid rgb(253, 249, 249);
+    border:1px solid rgb(9, 7, 7);
     background:rgb(109, 110, 111);
     border-radius:8px;
     
@@ -319,7 +248,7 @@ button:hover
 {
    font-size:40px;
     margin-left:4%;
-    margin-top:2%
+    margin-top:5%
 }
 
 #btn-top
@@ -416,19 +345,50 @@ margin-top:-10%;
     transform:scale(1.03);
     transition:0.5s;
 }
-
-#int
+.cards
 {
-    display:inline-block;
-    margin:5%;
-    margin-top:-5%;
-}
-#int p
-{
-    color:gray;
+width:45%;
+
+
+border-radius:5px;
+
+display:inline-block;
+margin:1%;
+text-align:center;
+margin-left: 3%;
+
+
+
 }
 
-#int p1
+
+
+
+.image img
+{
+width:100%;
+border-radius: 10px;
+
+}
+
+
+.name
+{
+text-align: left;
+font-size:25px;
+padding:0px;
+}
+
+.price
+{
+text-align: left;
+font-size:20px;
+
+}
+
+
+
+.price p1
 {
     border:1px solid black;
     padding:8px;
@@ -450,8 +410,8 @@ margin-top:-10%;
 
 #footer
 {
-    background: black;
-   padding:5.1%;
+    background: rgb(0, 0, 0);
+   padding:5%;
     float:left;
     
  
@@ -470,7 +430,7 @@ margin-top:-10%;
 
 #footer li
 {
-    color:rgb(187, 185, 185);
+    color:rgb(216, 213, 213);
     list-style:none;
    margin:10%;
     font-family:verdana;
@@ -483,17 +443,18 @@ margin-top:-10%;
     color:white;
     display:inline;
     margin:10%;
+    font-size:20px;
 }
 
 #foot
 {
-    background:black;
+    background: rgb(0, 0, 0);
     padding:5%;
 }
 
 #foot li
 {
-    color:rgb(192, 192, 192);
+    color:rgb(255, 255, 255);
     display:inline;
     padding:8%;
         margin-left:-6%;
@@ -501,56 +462,540 @@ margin-top:-10%;
 
 }
 
-#line
-{
-    color:white;
-position:absolute;
-left:-15;
-top:582%;
-    background:black;
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    overflow-x: hidden;
 }
 
-.dropbtn {
-  
-  color: white;
-  
-  font-size: 25px;
-  
+.navbar {
+    background-color: #111010;
+    color: white;
+    padding: 15px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 
-.dropdown {
-  position: relative;
-  display: inline-block;
+
+.nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    margin-left:2%;
+}
+
+.nav-links li {
+    padding: 10px 15px;
+    position: relative; 
+    font-size:25px;
+    margin:2%;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    display: block;
 }
 
 
 .dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: black;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-  border-radius:20px;
+    display: none; 
+    position: absolute;
+    background-color: #444;
+    min-width: 160px;
+    z-index: 1;
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    border-radius: 4px;
 }
 
+.dropdown-content li {
+    padding: 0;
+}
 
 .dropdown-content a {
-  color: white;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  border-radius:20px;
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: #555;
 }
 
 
-.dropdown-content a:hover 
-{background-color: white;
-color:red}
+.dropdown:hover .dropdown-content {
+    display: block;
+}
 
 
-.dropdown:hover .dropdown-content {display: block;}
+#menu-toggle, .menu-icon {
+    display: none; 
+}
+
+@media screen and (max-width: 768px) {
+    *{
+        padding:0;
+        margin:0.5%;
+    }
+    .navbar {
+        width:100%;
+        flex-wrap: wrap; 
+    }
+    
+    .menu-icon {
+        display: block; 
+        font-size: 2em;
+        cursor: pointer;
+    }
+
+    .nav-links {
+        width: 100%;
+        flex-direction: column; 
+        display: none; 
+        text-align: center;
+        background-color: #3e3e3e; 
+    }
+
+    .nav-links li {
+        padding: 0;
+        border-top: 1px solid #131212;
+        font-size:20px;
+    }
+    
+    .nav-links a {
+        padding: 15px; 
+    }
+
+    
+    #menu-toggle:checked + .menu-icon + .nav-links {
+        display: flex;
+    }
+
+    
+    .dropdown-content {
+        position: static; 
+        background-color: #090808;
+        box-shadow: none;
+        width: 80%;
+        margin: 0;
+    }
+    
+    
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    .logo
+{
+width:15%;
+position:absolute;
+
+padding:10px;
+top:1.5%;
+left:45%;
+}
+
+.photo
+{
+    width:100%;
+    height:200px;
+
+}
+
+#stn-pop
+{
+    position:absolute;
+    left:3%;
+    top:12%;
+}
+
+.stn 
+{
+    font-size:15px;
+    color:rgb(9, 9, 9);
+    width:70%;
+    
+    
+}
+
+h1{
+    font-size:20px;
+}
+
+
+#btn
+{
+    padding:15px;
+    margin-left:-8%;
+}
+
+#btn li
+{
+    display:inline;
+     padding:2%;
+    margin:2%;
+
+    color:rgb(10, 7, 7);
+    font-size:10px;
+    border:1px solid rgb(9, 7, 7);
+    background:rgb(109, 110, 111);
+    border-radius:8px;
+    
+}
+
+#btn li:hover
+
+{
+    background:white;
+    cursor:pointer;
+}
+
+#head-top
+{
+    
+    font-size:30px;
+    margin-left:4%;
+    margin-top:2%;
+}
+
+.mrd
+{
+    width:100%;
+    margin-left:-1%;
+    
+    
+}
+
+.mrd1
+{
+   width:100%;
+    margin-left:-1%;
+    
+}
+
+.mrd2
+{
+   width:100%;
+    margin-left:-1%;
+    
+}
+
+#col
+{
+    width:95%;
+    
+    margin-top:-5%;
+    margin-left:0%;
+    font-size:18px;
+    box-shadow:5px 5px 5px solid rgb(241, 1, 1);
+   
+}
+
+#col h2
+{
+    color:rgb(11, 122, 212);
+}
+
+#col p
+{
+    text-align:justify;
+}
+
+button
+{
+    width:35%;
+    font-size:15px;
+    background:rgb(73, 165, 241);
+    color:white;
+    border-radius:8px;
+    height:50px;
+    
+}
+
+button:hover
+{
+    cursor:pointer;
+    color:black;
+    background:white;
+}
+
+#col1
+{
+      width:95%;
+    
+    margin-top:-5%;
+    margin-left:0%;
+    font-size:18px;
+    box-shadow:5px 5px 5px solid rgb(241, 1, 1);
+   
+}
+
+#col1 p
+{
+    text-align:justify;
+}
+
+#col1 h2
+{
+    color:rgb(11, 122, 212);
+}
+
+#col2
+{
+     width:95%;
+    
+    margin-top:-5%;
+    margin-left:0%;
+    font-size:18px;
+    box-shadow:5px 5px 5px solid rgb(241, 1, 1);
+   
+}
+
+#col2 h2
+{
+    color:rgb(11, 122, 212);
+}
+
+#col2 p
+{
+    text-align:justify;
+}
+
+#sports-car
+{
+   font-size:25px;
+   width:100%;
+    margin-left:2%;
+    margin-top:1%
+}
+
+#btn-top
+{
+    padding:5px;
+    
+}
+
+#btn-top li
+{
+    display:inline;
+     padding:2%;
+    margin:2%;
+
+
+    color:rgb(10, 7, 7);
+    font-size:15px;
+    border:1px solid black;
+    
+    border-radius:8px;
+    
+}
+
+#btn-top li:hover
+
+{
+    background:rgb(216, 216, 216);
+    cursor:pointer;
+}
+
+#suv
+{
+    margin-left:5%;
+    margin-top:8%;
+    
+    
+}
+
+.car li
+{
+    display:inline-block;
+    margin:15%;
+    width:100%;
+    
+    margin-left:-2%;
+    font-size:18px;
+    background:rgb(219, 217, 217);
+    
+}
+
+
+.m1
+{
+    width:60%;
+    margin-top:-400%;
+    margin-left:10%;
+    
+}
+
+
+
+.m2
+{
+    width:70%;
+    margin-top:-300%;
+
+}
+
+#m2
+{
+ margin-left:20%;
+margin-top:-9%;
+}
+
+.m3
+{
+    width:80%;
+    margin-top:-100%;
+    
+}
+
+#m3
+{
+    margin-left:10%;
+margin-top:-10%;
+}
+
+
+#sports-car
+{
+    font-size:35px;
+    margin-top:-15%;
+}
+
+.cards
+{
+width:95%;
+
+
+border-radius:5px;
+
+
+display:inline-block;
+margin:1%;
+text-align:center;
+margin-left: 3%;
+
+
+
+}
+
+
+
+
+.image img
+{
+width:100%;
+border-radius: 10px;
+
+}
+
+
+.name
+{
+text-align: left;
+font-size:25px;
+padding:0px;
+}
+
+.price
+{
+text-align: left;
+font-size:20px;
+
+}
+
+
+
+.price p1
+{
+    border:1px solid black;
+    padding:8px;
+    font-size:20px;
+    cursor:pointer;
+    
+}
+
+#dis 
+{width:85%;
+    margin-left:5%;
+    color:gray;
+    text-align:justify;
+    font-size:20px;
+}
+#dis h3
+{
+    color:black;
+}
+
+#footer
+{
+    background: rgb(0, 0, 0);
+   padding:5%;
+    float:left;
+    width:85%;
+    
+ 
+    
+   
+    
+}
+
+#footer ol
+
+{
+    padding:0px;
+ margin-top:-4%;
+  
+}
+
+#footer li
+{
+    color:rgb(216, 213, 213);
+    list-style:none;
+   margin:10%;
+    font-family:verdana;
+    padding-right:10%;
+   
+
+}
+#footer h3
+{
+    color:white;
+    display:inline;
+    margin:10%;
+    font-size:25px;
+}
+
+#foot
+{
+    background: rgb(0, 0, 0);
+    padding:5%;
+}
+
+#foot li
+{
+    color:rgb(255, 255, 255);
+    display:inline;
+    padding:5%;
+        margin-left:-6%;
+    font-family:verdana;
+    
+
+}
+
+
+
+    
+}
 
 
 
@@ -560,26 +1005,25 @@ color:red}
 
 </style>
 <body>
-   <div id="head">
-    <header>
-        <ol>
-            
-            <div class="dropdown">
-  <li class="dropbtn">Model</li>
-  <div class="dropdown-content">
-    <a href="model.html">SUV Model</a>
-    <a href="electric.html">Electric</a>
-    <a href="#">Maybach</a>
-  </div>
-</div></li>
-            <li>Buy</li>
-            <li>Services</li>
-            <li>Brand</li>
-            <div id="button-top">
-            login
-            </div>
-        </ol>
-    </header>
+   
+   <nav class="navbar">
+        
+        <input type="checkbox" id="menu-toggle">
+        <label for="menu-toggle" class="menu-icon">&#9776;</label>
+        <ul class="nav-links">
+            <li><a href="#">Brand</a></li>
+            <li class="dropdown">
+                <a href="#">Models</a>
+                <ul class="dropdown-content">
+                    <li><a href="model.html">Suv Models</a></li>
+                    <li><a href="electric.html">Electric</a></li>
+                    <li><a href="maybach.html">Maybach</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Buy</a></li>
+        </ul>
+    </nav>
    
      <img src="images/logo.png" class="logo">
      
@@ -587,7 +1031,7 @@ color:red}
     
 <div id="photo">
 
-    <img src="images/car2.jpg" class="photo">
+    <img src="images/mercedes3.jpg" class="photo">
 </div>
 
 <div id="stn-pop">
@@ -662,34 +1106,61 @@ Own your Mercedes-Benz the smart way with STAR Agility+
         
     </div>
     <br/><br/><br/>
-
     <Div id="sports-car">Our Services</Div>
-    <img src="images/i1.jpg" class="interior">
-    <img src="images/g2.jpeg" class="interior">
+    
 
-    <div id="int">
-        <h2>
-            Digital extras for your Mercedes-Benz
-         </h2>
-        <p>
-          Simply book additional digital extras and experience your Mercedes-Benz in a new way.
+    <div class="cards">
 
-        </p>
-        <p1>Buy Online</p1>
-    </div>
+<div class="image">
+<img src="images/i1.jpg">
+</div>
 
-    <div id="int">
-        <h2>
-            Maintenance and Service
+<div class="name">
+ Digital extras for your Mercedes-Benz
+
+</div>
+
+<div class="price">
+<p> Simply book additional digital extras and experience your Mercedes-Benz in a new way.</p>
+<p1>Learn More</p1>
+
+</div>
 
 
+</div>
 
-         </h2>
-        <p>
+<div class="cards">
+
+<div class="image">
+ <img src="images/g2.jpeg">
+</div>
+
+<div class="name">
+  Maintenance and Service
+
+</div>
+
+<div class="price">
+
+ <p>
           Enjoy Peace of Mind with Mercedes-Benz Service, Maintenance and Repair.
         </p>
         <p1>Learn More</p1>
-    </div>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+    <br/><br/><br/><br/>
+   
+
+    
 
     <div id="dis">
         <h3>Disclaimer
@@ -753,9 +1224,7 @@ Accessories, colors and fitments shown may not be a part of standard specificati
         <li>FAQs</li>
         </ol>
     </div>
-<div id="line">
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-</div>
+
     <div id="foot">
         <li>About</li>
         <li>Policy</li>
@@ -763,6 +1232,9 @@ Accessories, colors and fitments shown may not be a part of standard specificati
         <li>Privacy</li>
 
     </div>
+
+    
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     
     
 </body>

@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Digital India 2047 — Vision at 100</title>
+  <meta name="description" content="A polished, single-scroll landing page presenting a professional vision for Digital India in 2047 — 100 years of independence." />
+  <meta name="author" content="Digital India 2047 Team" />
+  <style>
+    /* Reset & variables */
+    :root{
+      --bg-1: #071224; --bg-2:#041826; --glass: rgba(255,255,255,0.04);
+      --accent:#00c2ff; --accent-2:#7ef08a; --muted:#98a3b8; --card:#0b1a26;
+      --radius:14px; --maxw:1200px; --ff: Inter, 'Segoe UI', Roboto, system-ui, -apple-system, Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:var(--ff);background:linear-gradient(180deg,var(--bg-1),var(--bg-2));color:#eaf3ff}
+    a{color:inherit}
+
+    /* Layout container */
+    .wrap{max-width:var(--maxw);margin:0 auto;padding:28px}
+
+    /* NAV */
+    header{position:sticky;top:18px;z-index:60}
+    .nav{display:flex;align-items:center;gap:16px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:10px 14px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:48px;height:48px;border-radius:12px;background:linear-gradient(135deg,var(--accent), #7a8cff);display:grid;place-items:center;font-weight:800;color:#022233}
+    nav ul{display:flex;gap:14px;list-style:none;margin:0;padding:0}
+    nav a{font-weight:700;font-size:14px;color:var(--muted);text-decoration:none}
+    .nav-actions{margin-left:auto;display:flex;gap:10px}
+    .btn{background:transparent;border:1px solid rgba(255,255,255,0.04);padding:8px 12px;border-radius:10px;font-weight:700;cursor:pointer}
+    .btn.primary{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#022233;border:none}
+
+    /* HERO */
+    .hero{min-height:88vh;display:grid;grid-template-columns:1fr 460px;gap:28px;align-items:center;padding-top:16px}
+    .kicker{display:inline-block;background:rgba(255,255,255,0.03);padding:6px 10px;border-radius:999px;font-weight:800;color:var(--accent);font-size:13px}
+    h1{font-size:44px;line-height:1.04;margin:12px 0}
+    .lead{color:var(--muted);max-width:64ch}
+    .hero-cta{margin-top:20px;display:flex;gap:12px}
+
+    /* device mockup */
+    .device{border-radius:18px;padding:14px;background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);border:1px solid rgba(255,255,255,0.03)}
+    .screen{height:460px;border-radius:12px;overflow:hidden;background:linear-gradient(180deg,#031a24,#052a3b);display:flex;flex-direction:column}
+    .apps{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;padding:14px}
+    .app{height:88px;border-radius:10px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));display:grid;place-items:center;font-weight:800;color:var(--accent)}
+
+    /* Stats */
+    .stats{display:flex;gap:18px;margin-top:22px}
+    .stat{background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);padding:12px;border-radius:12px;min-width:110px;text-align:center}
+    .stat .num{font-size:22px;font-weight:900}
+    .muted{color:var(--muted)}
+
+    /* Sections */
+    section{padding:72px 0}
+    .section-title{display:flex;flex-direction:column;align-items:center;margin-bottom:18px}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);padding:20px;border-radius:12px;border:1px solid rgba(255,255,255,0.03);min-height:140px}
+
+    /* Timeline */
+    .timeline{display:flex;flex-direction:column;gap:18px}
+    .timeline-item{display:flex;gap:14px;align-items:flex-start}
+    .timeline-dot{min-width:46px;height:46px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(180deg,var(--accent),var(--accent-2));color:#022233;font-weight:800}
+    .timeline-content{background:rgba(255,255,255,0.02);padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.02)}
+
+    /* Impact grid */
+    .impact-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+
+    /* CTA */
+    .cta-card{background:linear-gradient(180deg, rgba(0,0,0,0.18), rgba(255,255,255,0.02));padding:22px;border-radius:12px;text-align:center;border:1px solid rgba(255,255,255,0.03)}
+
+    /* Footer */
+    footer{padding:32px 0;color:var(--muted);font-size:13px;text-align:center}
+
+    /* small screens */
+    @media (max-width:980px){
+      .hero{grid-template-columns:1fr}
+      .cards{grid-template-columns:repeat(2,1fr)}
+      .impact-grid{grid-template-columns:1fr}
+    }
+    @media (max-width:620px){
+      nav ul{display:none}
+      h1{font-size:28px}
+      .apps{grid-template-columns:repeat(2,1fr)}
+      .cards{grid-template-columns:1fr}
+    }
+
+    /* Animations */
+    .reveal{opacity:0;transform:translateY(18px);transition:all 700ms cubic-bezier(.2,.9,.2,1)}
+    .reveal.visible{opacity:1;transform:none}
+
+    /* Utility */
+    .center{text-align:center}
+  </style>
+</head>
+<body>
+  <header class="wrap">
+    <div class="nav" role="navigation" aria-label="Main Navigation">
+      <div class="brand">
+        <div class="logo" aria-hidden="true">IN</div>
+        <div>
+          <div style="font-weight:900">Digital India 2047</div>
+          <div style="font-size:12px;color:var(--muted)">Vision • Inclusion • Sustainability</div>
+        </div>
+      </div>
+
+      <nav aria-label="Primary Navigation">
+        <ul>
+          <li><a href="#vision">Vision</a></li>
+          <li><a href="#pillars">Pillars</a></li>
+          <li><a href="#timeline">Timeline</a></li>
+          <li><a href="#impact">Impact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="btn" id="previewBtn">Demo</button>
+        <button class="btn primary" id="joinBtn">Join</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <!-- HERO -->
+    <section class="hero" id="vision">
+      <div>
+        <span class="kicker">India • 2047</span>
+        <h1>Digital India at 100 — A future that transforms every life.</h1>
+        <p class="lead muted">By our centenary we envision universal digital access, responsible AI at the edge, climate-aware infrastructure and an economy where local creators thrive. This is technology that respects dignity, multilingual heritage and sustainability.</p>
+
+        <div class="hero-cta">
+          <button class="btn primary" onclick="document.getElementById('joinBtn').focus();">Get Involved</button>
+          <button class="btn" onclick="openManifesto()">Read Manifesto</button>
+        </div>
+
+        <div class="stats" aria-hidden="true">
+          <div class="stat">
+            <div class="num" data-target="100">0</div>
+            <div class="muted">% Digital Literacy</div>
+          </div>
+          <div class="stat">
+            <div class="num" data-target="1200">0</div>
+            <div class="muted">Million Connected Devices</div>
+          </div>
+          <div class="stat">
+            <div class="num" data-target="75">0</div>
+            <div class="muted">Gigabit Cities</div>
+          </div>
+        </div>
+      </div>
+
+      <aside class="device" aria-hidden="true">
+        <div class="screen" id="deviceScreen">
+          <div style="display:flex;justify-content:space-between;padding:12px;color:var(--muted);font-size:13px">08:23 • Delhi &nbsp; • &nbsp; 24°C</div>
+          <div class="apps">
+            <div class="app">eGov</div>
+            <div class="app">Agri</div>
+            <div class="app">Health</div>
+            <div class="app">Learn</div>
+            <div class="app">Energy</div>
+            <div class="app">Markets</div>
+          </div>
+          <div style="padding:12px;color:var(--muted);font-size:13px">Adaptive, offline-first, local-language dashboard — built for resilience.</div>
+        </div>
+      </aside>
+    </section>
+
+    <!-- PILLARS -->
+    <section id="pillars">
+      <div class="section-title reveal"><h2>Core Pillars</h2><p class="muted">Foundations that will carry us to 2047</p></div>
+      <div class="cards">
+        <article class="card reveal">
+          <h3>Universal, Affordable Connectivity</h3>
+          <p class="muted">Community-owned mesh networks, satellites and last-mile cooperative hubs delivering reliable broadband to every gram panchayat.</p>
+        </article>
+        <article class="card reveal">
+          <h3>Privacy-first Digital Identity</h3>
+          <p class="muted">Interoperable, consent-driven identities and verifiable credentials for seamless, accountable public services.</p>
+        </article>
+        <article class="card reveal">
+          <h3>Edge AI & Local Models</h3>
+          <p class="muted">Lightweight AI on local devices for health diagnostics, crop advisory, translation and legal aid — respectful of data locality and explainability.</p>
+        </article>
+        <article class="card reveal">
+          <h3>Green Infrastructure</h3>
+          <p class="muted">Renewable microgrids, sustainable data centers, repair-first electronics policies and circular e-waste systems.</p>
+        </article>
+        <article class="card reveal">
+          <h3>Education & Skills</h3>
+          <p class="muted">Localized, adaptive learning platforms and community mentorships to prepare youth for the jobs of tomorrow.</p>
+        </article>
+        <article class="card reveal">
+          <h3>Inclusive Digital Economy</h3>
+          <p class="muted">Micro-payments, cooperative marketplaces and identity-linked microcredit that enable economic participation across regions.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- TIMELINE -->
+    <section id="timeline">
+      <div class="section-title reveal"><h2>Roadmap to 2047</h2><p class="muted">Key milestones on the path to the centenary</p></div>
+      <div class="timeline">
+        <div class="timeline-item reveal">
+          <div class="timeline-dot">25</div>
+          <div class="timeline-content"><strong>2025–2030</strong><p class="muted">Capacity building: pilots for rural connectivity, digital literacy programs, language-first e-services.</p></div>
+        </div>
+        <div class="timeline-item reveal">
+          <div class="timeline-dot">35</div>
+          <div class="timeline-content"><strong>2030–2038</strong><p class="muted">Edge-AI rollout, local data trusts, nationwide health & education platforms.</p></div>
+        </div>
+        <div class="timeline-item reveal">
+          <div class="timeline-dot">45</div>
+          <div class="timeline-content"><strong>2038–2045</strong><p class="muted">Interoperable public services, green infrastructure scale, circular electronics economy.</p></div>
+        </div>
+        <div class="timeline-item reveal">
+          <div class="timeline-dot">47</div>
+          <div class="timeline-content"><strong>2045–2047</strong><p class="muted">Full inclusion: digital rights, community data governance and broad shared prosperity.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- IMPACT -->
+    <section id="impact">
+      <div class="section-title reveal"><h2>Projected Impact</h2><p class="muted">Concrete outcomes by 2047</p></div>
+      <div class="impact-grid">
+        <div class="card reveal">
+          <h3>Jobs</h3>
+          <p class="muted">10–15 million new green & digital jobs across rural and urban ecosystems — from repair technicians to data stewards.</p>
+        </div>
+        <div class="card reveal">
+          <h3>Health & Education</h3>
+          <p class="muted">Telemedicine & adaptive learning reach majority of districts; early diagnostics and personalized learning become common.</p>
+        </div>
+        <div class="card reveal">
+          <h3>Climate</h3>
+          <p class="muted">Energy-positive data centers, reduced emissions via smart grids, and large-scale e-waste recycling programs.</p>
+        </div>
+        <div class="card reveal">
+          <h3>Economy</h3>
+          <p class="muted">Local creator economies flourish with identity-linked payments and embedded marketplaces.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="reveal">
+      <div class="cta-card">
+        <h2>Join the 2047 Movement</h2>
+        <p class="muted">Contribute code, mentor a local hub, fund a microgrid or propose a pilot project. Collaboration will make the centenary vision real.</p>
+        <div style="margin-top:14px;display:flex;gap:10px;justify-content:center">
+          <button class="btn primary" onclick="alert('Demo: replace this with signup flow')">Sign up to contribute</button>
+          <button class="btn" onclick="openManifesto()">Read Manifesto</button>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p class="muted">Digital India 2047 • Concept design • Built with HTML, CSS & JavaScript</p>
+    </footer>
+  </main>
+
+  <!-- Modal Manifesto -->
+  <dialog id="manifesto" style="border-radius:12px;padding:18px;background:linear-gradient(180deg,#021427,#05293a);color:#e6eef8;border:none;max-width:760px;width:92%">
+    <h3>Manifesto — Digital India 2047</h3>
+    <p class="muted">We build technology that expands dignity, creates opportunity and protects our planet. We choose privacy, multilingual access and local ownership. We commit to inclusive growth and shared governance.</p>
+    <div style="text-align:right;margin-top:8px"><button class="btn" onclick="document.getElementById('manifesto').close()">Close</button></div>
+  </dialog>
+
+  <script>
+    // Smooth in-view reveals
+    const els = document.querySelectorAll('.reveal');
+    const io = new IntersectionObserver((entries)=>{ entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('visible'); }); }, {threshold:0.12});
+    els.forEach(e=>io.observe(e));
+
+    // Counters
+    document.querySelectorAll('[data-target]').forEach(n=>{
+      const target = +n.dataset.target; let cur = 0; const step = Math.max(1, Math.floor(target/120));
+      const run = ()=>{ cur += step; if(cur >= target) n.textContent = target; else{ n.textContent = cur; requestAnimationFrame(run); }};
+      run();
+    });
+
+    // Device preview animation
+    document.getElementById('previewBtn').addEventListener('click', ()=>{
+      const s = document.getElementById('deviceScreen');
+      s.animate([{transform:'translateY(0)'},{transform:'translateY(-10px)'},{transform:'translateY(0)'}],{duration:700,iterations:2});
+    });
+
+    function openManifesto(){ document.getElementById('manifesto').showModal(); }
+
+    // smooth anchor scrolling
+    document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click', e=>{ e.preventDefault(); const id=a.getAttribute('href').slice(1); const el=document.getElementById(id); if(el) el.scrollIntoView({behavior:'smooth', block:'start'}); }));
+
+    // accessibility: close dialog on ESC
+    document.addEventListener('keydown', e=>{ if(e.key==='Escape'){ const d=document.getElementById('manifesto'); if(d.open) d.close(); }});
+  </script>
+</body>
+</html>
